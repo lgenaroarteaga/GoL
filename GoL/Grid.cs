@@ -28,7 +28,7 @@ namespace GoL
                 this.count += value ? +1 : -1;
             }
         }
-                
+
         public int CountCells()
         {
             return count;
@@ -39,13 +39,13 @@ namespace GoL
         }
         public int CountNeighbours(int row, int column) {
             int result = 0;
-            if ( row>0 && column>0 && cells[row-1 , column-1]) {
+            if (row > 0 && column > 0 && cells[row - 1, column - 1]) {
                 result++;
             }
             if (row > 0 && column > 0 && cells[row, column - 1]) {
                 result++;
             }
-            if (row > 0 && column > 0 && cells[row +1, column - 1])
+            if (row > 0 && column > 0 && cells[row + 1, column - 1])
             {
                 result++;
             }
@@ -65,12 +65,14 @@ namespace GoL
             {
                 result++;
             }
-            if (row > 0 && column > 0 && cells[row + 1 , column + 1 ])
+            if (row > 0 && column > 0 && cells[row + 1, column + 1])
             {
                 result++;
             }
             return result;
         }
+
+
 
     }
 

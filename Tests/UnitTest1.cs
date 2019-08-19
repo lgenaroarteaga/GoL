@@ -22,5 +22,36 @@ namespace Tests
             grid.SetCell(2, 5, true);
             Assert.AreEqual(grid.CountCells(), 2);
         }
+
+        [TestMethod]
+        public void Neighbours0() {
+            GoL.Grid grid = new GoL.Grid(10, 10);
+            grid.SetCell(5, 5, true);
+            Assert.AreEqual(grid.CountNeighbours(5,5), 0);
+        }
+
+        [TestMethod]
+        public void Neighbours1()
+        {
+            GoL.Grid grid = new GoL.Grid(10, 10);
+            grid.SetCell(5, 5, true);
+            Assert.AreEqual(grid.CountNeighbours(5, 4), 1);
+        }
+
+        [TestMethod]
+        public void Neighbours2() {
+            GoL.Grid grid = new GoL.Grid(10, 10);
+            grid.SetCell(0, 0, true);
+            Assert.AreEqual(grid.CountNeighbours(0,1), 1);
+        }
+
+        [TestMethod]
+        public void Neighbours3()
+        {
+            GoL.Grid grid = new GoL.Grid(10, 10);
+            grid.SetCell(-1, -1, true);
+            Assert.AreEqual(grid.CountNeighbours(0, 1), 1);
+        }
+
     }
 }
